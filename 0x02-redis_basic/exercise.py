@@ -11,7 +11,6 @@ class Cache:
     """
     This class for creating an instance of cache using Redis.
     """
-
     def __init__(self):
         """
         This method initializes each attribute in a Cache object.
@@ -31,9 +30,10 @@ class Cache:
         """
         This method returns data from redis.
         """
-        if fn is None:
-            return self._redis.get(key)
-        return fn(self._redis.get(key))
+        data = self._redis.get(key)
+        if data is None or fn is None:
+            return data
+        return fn(data)
 
     def get_str(self, key: str) -> str:
         """
