@@ -26,7 +26,7 @@ class Cache:
         self._redis.set(key, data)
         return str(key)
 
-    def get(self, key: str, fn: Union[Callable, None]) -> Any:
+    def get(self, key: str, fn: Union[Callable, None] = None) -> Any:
         """
         This method returns data from redis.
         """
