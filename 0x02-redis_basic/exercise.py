@@ -37,12 +37,12 @@ class Cache:
 
     def get_str(self, key: str) -> str:
         """
-        This method returns string data from redis
+        This method returns string data from redis.
         """
-        return str(self._redis.get(key))
+        return self.get(key, str())
 
     def get_int(self, key: str) -> int:
         """
-        This method returns integer data from redis
+        This method returns integer data from redis.
         """
-        return int(self._redis.get(key))
+        return self.get(key, int())
