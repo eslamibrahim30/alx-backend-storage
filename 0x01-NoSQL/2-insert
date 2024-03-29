@@ -1,5 +1,5 @@
 // This script inserts a document in the collection school
-use $1
+use db.getName()
 db.school.insertOne(
   {
     "name": "Holberton school"
