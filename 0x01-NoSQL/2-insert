@@ -1,7 +1,7 @@
 // This script inserts a document in the collection school
-use db.getMongo()
-db.school.insertOne(
-  {
-    "name": "Holberton school"
-  }
+db.runCommand(
+    {
+      insert: "school",
+      documents: [{"name": "Holberton school"}],
+    }
 )
